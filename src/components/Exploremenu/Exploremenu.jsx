@@ -4,21 +4,20 @@ import { menu_list } from "../../assets/assets";
 
 function Exploremenu({ category, setCategory }) {
   return (
-    <div className="explore-menu" id="explore-menu">
-      <h1>Explore our menu</h1>
+    <div className="explore-menu container py-5" id="explore-menu">
+      <h1 className="text-center">Explore our menu</h1>
 
-      <p className="explore-menu-text">
-        My favorite food is pizza because it is soft, cheesy, and full of
-        flavours. I love the crispy crust and the delicious toppings that make
-        every bite enjoyable. Whenever I eat pizza, it makes me feel happy and
-        satisfied.
+      <p className="explore-menu-text text-center mx-auto col-lg-8">
+        My favorite food is pizza because it is soft, cheesy, and full of flavours.
+        I love the crispy crust and the delicious toppings that make every bite enjoyable.
       </p>
 
-      <div className="explore-menu-list">
+      {/* Horizontal Scrollable List */}
+      <div className="scroll-menu mt-4">
         {menu_list.map((item, index) => (
           <div
             key={index}
-            className={`explore-menu-list-item ${
+            className={`scroll-item ${
               category === item.menu_name ? "active" : ""
             }`}
             onClick={() =>

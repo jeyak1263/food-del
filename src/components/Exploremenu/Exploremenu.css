@@ -1,57 +1,56 @@
-/* Main container */
+/* Entire Section */
 .explore-menu {
-display: flex;
-flex-direction: column;
-gap: 20px;
+  text-align: center;
 }
 
-.explore-menu h1 {
-  font-size: 2.5rem;
-  color: #333;
-  font-weight: 500;
-}
-
-
+/* Text */
 .explore-menu-text {
-  max-width: 60%;
-  columns: #808080;
+  font-size: 16px;
+  color: #555;
 }
 
-.explore-menu-list {
- display: flex;
- justify-content: space-between;
- align-items: center;
- gap: 30px;
- text-align: center;
- margin: 20px 0px;
- overflow: scroll;
+/* Horizontal Scroll Container */
+.scroll-menu {
+  display: flex;
+  overflow-x: auto;
+  gap: 45px;
+  padding-bottom: 10px;
+  scroll-behavior: smooth;
+  white-space: nowrap;
 }
-.explore-menu-list::-webkit-scrollbar{
+
+/* Hide scrollbar (optional) */
+.scroll-menu::-webkit-scrollbar {
   display: none;
 }
 
-/* Single menu card */
-.explore-menu-list-item img{
-  width: 7.5vw;
-  min-width: 80px;
+.scroll-item {
+  flex: 0 0 auto;
+  width: 120px;
+  text-align: center;
   cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.scroll-item img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
   border-radius: 50%;
-  transition: 0.2s;
+  border: 2px solid transparent;
+  transition: 0.3s;
 }
 
-.explore-menu-list-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+.scroll-item:hover img {
+  transform: scale(1.08);
 }
 
-
-.explore-menu-list-item p {
-  margin-top: 10px;
-  color: #747474;
-  font-size: max(1.4vw,16px);
-  cursor: pointer;
+.scroll-item.active img {
+  border-color: #ff6600;
 }
-.explore-menu-list-item.active {
-  border: 2px solid #ff4d4d;
-  background: #ffecec;
+
+.scroll-item p {
+  margin-top: 8px;
+  font-weight: 600;
+  font-size: 15px;
 }

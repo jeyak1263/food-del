@@ -1,158 +1,70 @@
-
-
-.navbar{
-    padding: 20px 0px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.navbar .logo{
-    width: 150px;
-}
-
-.navbar-menu{
-    display: flex;
-    list-style: none;
-    gap: 20px;
-    color: #49557e;
-    font-size: 18px;
-}
-
-.navbar-right{
-    display: flex;
-    align-items: center;
-    gap: 40px;
-}
-
-.navbar button{
-    background: transparent;
-    font-size: 16px;
-    color: #0e3fe0;
-    border:1px solid rgb(238, 56, 10);
-    padding: 10px 30px;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.navbar button:hover{
-    background-color:#11deec;
-}
-
-.navbar .active{
-    padding-bottom: 2px;
-    border-bottom: 2px solid #49557e;
-}
-
-.navbar li{
-    cursor: pointer;
-}
-
-.navbar-search-icon{
-    position: relative;
-}
-
-.navbar-search-icon .dot{
-    position: absolute;
-    min-width: 10px;
-    min-height: 10px;
-    background-color: rgb(227, 7, 7);
-    border-radius: 50%;
-    top: -8px;
-    right: -8px;
-}
+/* NAVBAR MAIN STYLE */
 .navbar {
-  width: 100%;
-  padding: 18px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  padding: 10px 20px !important;
   background: #ffffff;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
-/* Logo */
-.logo {
-  width: 150px;
-  cursor: pointer;
+/* CENTER MENU IN DESKTOP */
+@media (min-width: 992px) {
+  .navbar-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
 }
 
-/* Menu */
-.navbar-menu {
-  display: flex;
-  gap: 25px;
-  list-style: none;
-}
-
-.navbar-menu li {
-  font-size: 18px;
-  font-weight: 500;
-  color: #49557e;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.navbar-menu li a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* Hover + Active */
-.navbar-menu li:hover,
-.navbar-menu .active {
-  color: #ff4e4e;
-}
-
-/* Right Icons */
-.navbar-right {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.navbar-right img {
-  width: 25px;
-  cursor: pointer;
-}
-
-/* Basket icon with dot */
-.navbar-search-icon {
-  position: relative;
-}
-
-.navbar-right .dot {
-  position: absolute;
-  top: -4px;
-  right: -4px;
-  width: 8px;
-  height: 8px;
-  background: red;
-  border-radius: 50%;
-}
-
-/* Sign In Button */
-.navbar-right button {
-  padding: 8px 20px;
-  background: #ff4e4e;
-  border: none;
-  color: #fff;
-  border-radius: 20px;
+/* MENU ITEM STYLE */
+.navbar-nav .nav-link {
   font-size: 16px;
-  cursor: pointer;
+  font-weight: 500;
+  padding: 8px 14px;
+  color: #333;
   transition: 0.3s;
 }
 
-.navbar-right button:hover {
-  background: #e84343;
+/* HOVER */
+.navbar-nav .nav-link:hover {
+  color: #e63946;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .navbar-menu {
-    display: none;
+/* ACTIVE */
+.navbar-nav .nav-link.active {
+  color: #e63946;
+  font-weight: 600;
+}
+
+/* RIGHT SIDE ICONS (DESKTOP) */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* MOBILE RESPONSIVE FIXES */
+@media (max-width: 991px) {
+
+  /* Menu becomes full width */
+  .navbar-center {
+    width: 100%;
+    justify-content: flex-start;
+    margin-top: 10px;
+  }
+
+  /* Stack nav items */
+  .navbar-nav {
+    gap: 5px;
+  }
+
+  /* Right icons move under menu */
+  .navbar-right {
+    margin-left: auto;
+    margin-top: 10px;
+  }
+
+  /* Cart dot */
+  .navbar .rounded-circle {
+    width: 8px;
+    height: 8px;
   }
 }
