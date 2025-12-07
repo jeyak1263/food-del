@@ -2,13 +2,16 @@
   position: relative;
   width: 100%;
   height: 90vh;
-  background-image: url('../../assets/header_04.jpg'); /* your image */
+  min-height: 500px;
+  background-image: url('../../assets/header_04.jpg');
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   display: flex;
-  justify-content: center;   /* center horizontally */
-  align-items: center;       /* center vertically */
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  padding: 0 20px;
 }
 
 /* Background overlay */
@@ -18,7 +21,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.45); /* dark transparent layer */
+  background: rgba(0, 0, 0, 0.45);
   z-index: 1;
 }
 
@@ -27,15 +30,90 @@
   position: relative;
   z-index: 2;
   color: white;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
 .header-contents h2 {
-  font-size: 2.5rem;
+  font-size: clamp(1.8rem, 5vw, 3rem);
   font-weight: bold;
+  margin-bottom: 20px;
+  line-height: 1.2;
 }
 
 .header-contents p {
-  font-size: 1.1rem;
-  margin-top: 15px;
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+  margin: 20px 0;
   line-height: 1.6;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
+
+.header-contents .btn {
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  box-shadow: 0 4px 15px rgba(230, 57, 70, 0.3);
+}
+
+.header-contents .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(230, 57, 70, 0.4);
+}
+
+/* TABLET RESPONSIVE */
+@media (max-width: 768px) {
+  .header {
+    height: 70vh;
+    min-height: 400px;
+    background-attachment: scroll;
+    padding: 0 15px;
+  }
+  
+  .header-contents {
+    padding: 0 10px;
+  }
+  
+  .header-contents h2 {
+    margin-bottom: 15px;
+  }
+  
+  .header-contents p {
+    margin: 15px 0;
+  }
+  
+  .header-contents .btn {
+    padding: 10px 25px;
+  }
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 480px) {
+  .header {
+    height: 60vh;
+    min-height: 350px;
+    padding: 0 10px;
+  }
+  
+  .header-contents {
+    padding: 0 5px;
+  }
+  
+  .header-contents h2 {
+    margin-bottom: 12px;
+  }
+  
+  .header-contents p {
+    margin: 12px 0;
+  }
+  
+  .header-contents .btn {
+    padding: 8px 20px;
+  }
+}
+
