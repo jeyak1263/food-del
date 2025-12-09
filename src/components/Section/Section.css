@@ -12,6 +12,7 @@
   align-items: center;
   text-align: center;
   padding: 0 20px;
+  font-family: 'Lobster', cursive;
 }
 
 /* Background overlay */
@@ -115,5 +116,7 @@
   .header-contents .btn {
     padding: 8px 20px;
   }
+  @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
 }
 
