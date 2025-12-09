@@ -1,7 +1,6 @@
-import React, { useContext } from 'react';
-import './cart.css';
-
-<div styleName={} />
+import React, { useContext } from "react";
+import "./cart.css";
+import { StoreContext } from "../../components/Exploremenu/Context/StoreContext";
 
 export default function Cart() {
   const { cartItems, food_list, removeFromCart } = useContext(StoreContext);
@@ -9,8 +8,6 @@ export default function Cart() {
   return (
     <div className="cart">
       <div className="cart-items">
-
-        {/* Header row */}
         <div className="cart-items-title">
           <p>Items</p>
           <p>Title</p>
@@ -19,14 +16,15 @@ export default function Cart() {
           <p>Total</p>
           <p>Remove</p>
         </div>
+
         <hr />
 
-        {/* Render cart items */}
         {food_list.map((item) => {
+          // check if item exists in cart
           if (cartItems[item._id] > 0) {
             return (
-              <div className="cart-items-title cart-items-item" key={item._id}>
-                <img src={item.image} alt="" />
+              <div className="cart-item" key={item._id}>
+                <img src={item.image} alt="" className="cart-item-img" />
 
                 <p>{item.name}</p>
                 <p>${item.price}</p>
@@ -35,13 +33,18 @@ export default function Cart() {
 
                 <p>${item.price * cartItems[item._id]}</p>
 
-                <button onClick={() => removeFromCart(item._id)}>X</button>
+                <button
+                  className="remove-btn"
+                  onClick={() => removeFromCart(item._id)}
+                >
+                  X
+                </button>
               </div>
             );
           }
+
           return null;
         })}
-
       </div>
     </div>
   );
