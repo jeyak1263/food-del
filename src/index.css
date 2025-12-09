@@ -40,6 +40,10 @@ a{
   .container, .container-fluid {
     padding-left: 8px;
     padding-right: 8px;
+    flex-wrap: nowrap;
+  }
+  .logo-img {
+    width: 100%;
   }
 }
 

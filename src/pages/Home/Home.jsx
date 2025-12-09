@@ -12,7 +12,6 @@ function Home() {
 
   return (
     <div>
-      <Header />
       <Section />
       
       <Exploremenu category={category} setCategory={setCategory} />

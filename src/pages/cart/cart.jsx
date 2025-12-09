@@ -1,12 +1,48 @@
-import React from 'react'
-import './cart.css'
+import React, { useContext } from 'react';
+import './cart.css';
 
-const cart = () => {
+<div styleName={} />
+
+export default function Cart() {
+  const { cartItems, food_list, removeFromCart } = useContext(StoreContext);
+
   return (
-    <div>
-      
-    </div>
-  )
-}
+    <div className="cart">
+      <div className="cart-items">
 
-export default cart
+        {/* Header row */}
+        <div className="cart-items-title">
+          <p>Items</p>
+          <p>Title</p>
+          <p>Price</p>
+          <p>Quantity</p>
+          <p>Total</p>
+          <p>Remove</p>
+        </div>
+        <hr />
+
+        {/* Render cart items */}
+        {food_list.map((item) => {
+          if (cartItems[item._id] > 0) {
+            return (
+              <div className="cart-items-title cart-items-item" key={item._id}>
+                <img src={item.image} alt="" />
+
+                <p>{item.name}</p>
+                <p>${item.price}</p>
+
+                <p>{cartItems[item._id]}</p>
+
+                <p>${item.price * cartItems[item._id]}</p>
+
+                <button onClick={() => removeFromCart(item._id)}>X</button>
+              </div>
+            );
+          }
+          return null;
+        })}
+
+      </div>
+    </div>
+  );
+}
