@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import "./cart.css";
+import "./Cart.css";
 import { StoreContext } from "../../components/Exploremenu/Context/StoreContext";
 
 export default function Cart() {
