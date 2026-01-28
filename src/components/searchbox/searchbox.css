@@ -1,0 +1,14 @@
+.search-box {
+  position: relative;
+}
+
+.search-input {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  width: 180px;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
