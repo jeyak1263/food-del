@@ -5,10 +5,17 @@
 .search-input {
   position: absolute;
   top: 40px;
-  right: 0;
+  right: 0px;
   width: 180px;
   padding: 6px 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
   outline: none;
+}
+.action-icon{
+  height: 22px;
+  width: 22px;
+  cursor: pointer;
+  transition: 0.3s;
+  padding-right: 10px;
 }
