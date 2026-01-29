@@ -115,7 +115,8 @@
   }
   
   .logo-img {
-    height: 35px;
+    height: 30px;
+    padding-top: 5px;
   }
   
   .navbar-nav .nav-link {
@@ -154,11 +155,34 @@
     font-size: 12px;
   }
 }
+/* ===== 320px PERFECT FIX ===== */
 @media (max-width: 320px) {
+
+  .navbar-collapse {
+    text-align: center;
+  }
+
+  .navbar-nav {
+    margin-top: 10px;
+  }
+
   .navbar-actions {
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;   /* 🔑 MAIN FIX */
+    align-items: center;
     gap: 10px;
+    width: 100%;
+  }
+
+  .search-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .search-input {
+    width: 90%;
+    font-size: 12px;
+    padding: 6px 10px;
   }
 
   .action-icon {
@@ -167,10 +191,8 @@
   }
 
   .btn-danger {
-    padding: 4px 10px;
-    font-size: 11px;
+    width: 90%;               /* 🔑 BUTTON CENTER */
+    font-size: 12px;
+    padding: 10px 0;
   }
 }
-
-
-
